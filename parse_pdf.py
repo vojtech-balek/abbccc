@@ -73,3 +73,31 @@ def get_text_from_pdf(filepath):
             full_text.append('\n=== Page Break ===\n')
 
         return '\n'.join(full_text)
+
+# import tiktoken
+#
+# # Load encoding for the model you're using
+# encoding = tiktoken.get_encoding("cl100k_base")  # Adjust according to the model
+#
+# # Define max input tokens
+# MAX_INPUT_TOKENS = 6000  # Set your limit for the input
+#
+# # Simulating parsed text from PDF
+# parsed_text = get_text_from_pdf('04 - Data Transformer/Examples/RDOSea3A.pdf')
+#
+# # Tokenize the parsed text
+# input_tokens = encoding.encode(parsed_text)
+#
+# print(len(input_tokens))
+# print(len(parsed_text))
+#
+# # Check if the input exceeds the max token limit
+# if len(input_tokens) > MAX_INPUT_TOKENS:
+#     # Truncate the text to the maximum allowed tokens
+#     input_tokens = input_tokens[:MAX_INPUT_TOKENS]
+#     # Decode back to text
+#     truncated_text = encoding.decode(input_tokens)
+# else:
+#     truncated_text = parsed_text
+#
+# print(len(truncated_text))
