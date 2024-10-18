@@ -1,0 +1,13 @@
+pandas
+numpy
+pdf2image
+jupyter
+ipykernel
+pdfplumber
+statsmodels
+matplotlib
+seaborn
+scipy
+plotly
+dash
+scikit-learn
