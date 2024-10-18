@@ -11,7 +11,21 @@ Tady nadefinuj, jak to ma vypadat:
 """
 
 class TransformerInfo(BaseModel):
+    #Project General Information
     date: Optional[str] = None
+    opportunity_number: Optional[str] = None
+    procure_entity_id: Optional[str] = None
+    end_customer: Optional[str] = None
+    end_country: Optional[str] = None
+    project_name: Optional[str] = None
+    industry: Optional[str] = None
+    supplier: Optional[str] = None
+    supplier_offer_reference: Optional[str] = None
+    abb_procure_rfq_num: Optional[str] = None
+    offer_type: Optional[str] = None
+    division: Optional[str] = None
+    country_of_demand: Optional[str] = None
+    won: Optional[str] = None
     # Commercial part
     quantity: Optional[int] = None
     suppliers_currency: Optional[str] = None
@@ -91,6 +105,19 @@ def get_extract_prompt(transformer_number:int, text):
                     f"number {transformer_number}. Make sure to follow the restrictions-convert to correct units."
                     f"Additional restrictions:"
                     f""" 
+                        date: date of the offer, 
+                        opportunity_number: number of the opportuniy (e.g. OPP-20-3918859),
+                        end_customer: name of the end customer, 
+                        end_country: country of installation of the device,
+                        project_name: name of the project, 
+                        industry: choose ("H2", "ALU", "CEM", "MIN", "OTHER"),
+                        supplier: name of the suplier company, 
+                        supplier_offer_reference: reference of the supplier offer,
+                        abb_procure_rfq_num: number of abb procure RQF if available,
+                        offer_type: choose ("Firm", "Budgetary"),
+                        division: choose division (e.g. "PAEN"),
+                        country_of_demand: country of demand,
+                        won: yes if won, no if not,
                         quantity: explains how many transformer units number {transformer_number} are being sold."
                         suppliers_currency: (EUR, CZK..),
                         transformer_unit_price: price of the specified transformer,
