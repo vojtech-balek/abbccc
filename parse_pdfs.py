@@ -17,6 +17,7 @@ headers = {
 
 
 SYSTEM_PROMPT = ""
+USER_PROMPT = ""
 # Payload for the request
 payload = {
     "messages": [
