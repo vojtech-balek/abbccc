@@ -12,17 +12,59 @@ Tady nadefinuj, jak to ma vypadat:
 
 class TransformerInfo(BaseModel):
     date: Optional[str] = None
+    # Commercial part
     quantity: Optional[int] = None
     suppliers_currency: Optional[str] = None
     transformer_unit_price: Optional[int] = None
+    discount: Optional[float] = None
+    cost_more: Optional[int] = None
+    incoterm: Optional[str] = None
+    incoterm_place: Optional[str] = None
+    packing: Optional[str] = None
+    packing_costs: Optional[int] = None
+    transportation_extra_costs: Optional[int] = None
+    lead_time: Optional[int] = None
+    ### Transformer General and Enviromental info
     dry_or_oil: Optional[str] = None
+    application: Optional[str] = None
+    standard: Optional[str] = None
+    application_field: Optional[str] = None
+    design_temperature: Optional[str] = None
+    altitude: Optional[str] = None
+    zone_of_installation: Optional[str] = None
+    protection_class: Optional[str] = None
+    corrosion_class: Optional[str] = None
+    color_RAL: Optional[str] = None
+    total_weight: Optional[int] = None
+    dim_length: Optional[int] = None
+    dim_height: Optional[int] = None
+    #Technical data
     rated_power_kVA: Optional[int] = None
-    primary_winding: Optional[str] = None
-    secondary_winding: Optional[str] = None
+    derated_power_kVA: Optional[int] = None
+    secondary_rated_power_kVA: Optional[int] = None
+    reactor_power_kVAr: Optional[int] = None
+    cooling_system: Optional[str] = None
+    primary_winding_material: Optional[str] = None
+    secondary_winding_material: Optional[str] = None
+    num_of_windings: Optional[int] = None
+    frequency: Optional[int] = None
+    rated_volt_primary_side: Optional[float] = None
+    rated_voltage_secondary_side: Optional[float] = None
+    uk_impedance: Optional[str] = None
+    vector_group: Optional[str] = None
     no_load_loss: Optional[int] = None
-    full_load_loss_75: Optional[int] = None
-    full_load_loss_120: Optional[int] = None
-    rated_volt_primary_side: Optional[int] = None
+    full_load_loss_75: Optional[float] = None
+    full_load_loss_120: Optional[float] = None
+    noise_level: Optional[str] = None
+    tap_changer: Optional[str] = None
+    tap_range: Optional[str] = None
+    design_transformer_type: Optional[str] = None
+    k_factor: Optional[float] = None
+
+
+
+
+
 
 
 class NumberTransformers(BaseModel):
@@ -46,19 +88,57 @@ system = "You are an expert finder of key information from text."
 def get_extract_prompt(transformer_number:int, text):
     user_extract = (f"Extract the requested information from the offer."
                     f"There could be offered multiple different transformers. Extract information about transformer "
-                    f"number {transformer_number}."
-                    f"Quantity explains how many transformer units number {transformer_number} are being sold."
-                    f""" Additional restrictions:
-                        dry_or_oil (either "Dry", "Oil")
-                        Rated power[kVA]: ___
-                        Primary winding material[Aluminium/Copper]: ___
-                        Secondary winding material[Aluminium/Copper]: ___
-                        No load losses[W]: ___
-                        Full Load Loss at 75°C [W]
-                        Full Load Loss at 120°C [W]
-                        Rated Voltage Primary side [kV]: ___
+                    f"number {transformer_number}. Make sure to follow the restrictions-convert to correct units."
+                    f"Additional restrictions:"
+                    f""" 
+                        quantity: explains how many transformer units number {transformer_number} are being sold."
+                        suppliers_currency: (EUR, CZK..),
+                        transformer_unit_price: price of the specified transformer,
+                        discount: mention of discounts applied to the offer from the manufacturer,
+                        cost_more: list of costs of other products besides the transformer (e.g. "1200 + 2000 + 3000"),
+                        incoterm: abbreviation of the incoterm used in the offer (e.g. FCA, EXW), 
+                        incoterm_place: geographical place of the incotermm,
+                        packing: any specification of the packaging,
+                        packing_costs: 0 if included, price otherwise,
+                        transportation_extra_costs: 0 if included, price otherwise,
+                        lead_time: weeks,
+                        
+                        dry_or_oil: choose ("Dry", "Oil"),
+                        application: choose ("Distribution", "Rectifier"),
+                        standard: choose ("IEC", "IEEE", other standards),
+                        application_field: choose ("Indoor", "Outdoor"),
+                        design_temperature: maximal temperature (e.g. "max 40°C"), 
+                        altitude: maximal altitude above sea level (e.g. "max 1000 m. a. s. l."),
+                        zone_of_installation: choose ("Seismic", "Safe", "Ex"),
+                        protection_class: IP rating (e.g. IP55), 
+                        corrosion_class: choose corrosion class (e.g. C2),
+                        color_RAL: RAL code of coloring of the transformer, 
+                        total_weight: total weight in Kg,
+                        dim_length: length of the transformer in mm, 
+                        dim_height: height of the transformer in mm, 
+                        rated_power_kVA: rated power in  kVA,
+                        derated_power_kVA: derated power in kVA,
+                        secondary_rated_power_kVA: secondary rated power in kVA, 
+                        reactor_power_kVAr: reactor power in kVAr, 
+                        cooling_system: specification of the cooling system ("AN", "AF", "ONAN", ...),
+                        primary_winding: material of primary winding, (choose "Aluminium", "Copper"),
+                        secondary_winding: material of primary winding, (choose "Aluminium", "Copper"),
+                        num_of_windings: number of windings, 
+                        frequency: transformer frequency in Hz,
+                        rated_volt_primary_side: rated voltage for the primary side in kV, 
+                        rated_voltage_secondary_side: rated voltage for the secondary side in kV, 
+                        uk_impedance: Uk (Impedance) #1 in percent,
+                        vector_group: select vector group,
+                        no_load_loss: loss at 0 load in W,
+                        full_load_loss_75: Full Load Loss at 75°C in W,
+                        full_load_loss_120: Full Load Loss at 120°C in W,
+                        noise_level: level of noise in dB (t.b.c. if not mentioned), 
+                        tap_changer: choose ("OCTC", "NLTC", "OTHER", "NONE"),
+                        tap_range: Tap Range e.g. +/- 2.5%,
+                        design_transformer_type: type of transformer design (e.g. RESIBLOC),
+                        k_factor: k-factor
                     """
-                       f"Offer text: \\n {text}")
+                    f"\\n Offer text: \\n {text}")
 
     return user_extract
 
