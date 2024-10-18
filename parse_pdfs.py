@@ -1,5 +1,5 @@
 import json
-from parse_pdf import get_text_from_pdf, yield_pdfs_paths
+from parse_pdf import get_text_from_pdf, yield_pdfs_paths, get_text_from_docx
 from pydantic import BaseModel
 from openai import AzureOpenAI
 from typing import Optional
@@ -17,7 +17,7 @@ class TransformerInfo(BaseModel):
     suppliers_currency: Optional[str] = None
     transformer_unit_price: Optional[int] = None
     discount: Optional[float] = None
-    cost_more: Optional[int] = None
+    additional_cost: Optional[int] = None
     incoterm: Optional[str] = None
     incoterm_place: Optional[str] = None
     packing: Optional[str] = None
@@ -63,10 +63,6 @@ class TransformerInfo(BaseModel):
 
 
 
-
-
-
-
 class NumberTransformers(BaseModel):
     types_of_transformers_offered: float
 
@@ -93,9 +89,9 @@ def get_extract_prompt(transformer_number:int, text):
                     f""" 
                         quantity: explains how many transformer units number {transformer_number} are being sold."
                         suppliers_currency: (EUR, CZK..),
-                        transformer_unit_price: price of the specified transformer,
+                        transformer_unit_price: price of single unit of specified transformer,
                         discount: mention of discounts applied to the offer from the manufacturer,
-                        cost_more: list of costs of other products besides the transformer (e.g. "1200 + 2000 + 3000"),
+                        additional_cost: Cost of additional components related to transformer (e.g. "1200 + 2000 + 3000"),
                         incoterm: abbreviation of the incoterm used in the offer (e.g. FCA, EXW), 
                         incoterm_place: geographical place of the incotermm,
                         packing: any specification of the packaging,
@@ -141,11 +137,32 @@ def get_extract_prompt(transformer_number:int, text):
 
     return user_extract
 
+# def get_extract_prompt(transformer_number:int, text):
+#     user_extract = (f"Extract the requested information from the offer."
+#                     f"There could be offered multiple different transformers. Extract information about transformer "
+#                     f"number {transformer_number}. Make sure to follow the restrictions-convert to correct units."
+#                     f"Additional restrictions:"
+#                     f"""
+#                         quantity: explains how many transformer units number {transformer_number} are being sold."
+#                         dry_or_oil (choose "Dry", "Oil"),
+#                         suppliers_currency (EUR, CZK..),
+#                         transformer_unit_price: price of the specified transformer,
+#                         rated_power_kVA (units kVA),
+#                         primary_winding (choose "Aluminium", "Copper"),
+#                         secondary_winding (choose "Aluminium", "Copper"),
+#                         no_load_loss (units: W),
+#                         full_load_loss_75 (units: W): Full Load Loss at 75°C,
+#                         full_load_loss_120 (units: W): Full Load Loss at 120°C,
+#                         rated_volt_primary_side (units: kV)
+#                     """
+#                     f"\\n Offer text: \\n {text}")
+#
+#     return user_extract
+
 
 def get_user_count_prompt(text):
     return (f"What is the number of different types of transformer units offered for sale in the report?"
                   f"Report: {text}")
-
 
 
 def get_credentials():
@@ -189,22 +206,32 @@ def main(system_prompt, user_prompt, structure):
 if __name__ == '__main__':
     df_list = []
 
-    # Example usage
-    for pdf_path in yield_pdfs_paths("04 - Data Transformer/Data"):
+    counter = 0
 
-        text = get_text_from_pdf(pdf_path)
-        print(f"PDF: {pdf_path}")
-        print(f"Extracted text: {text[:100]}")
+    # Example usage
+    for file_path, filename in yield_pdfs_paths("04 - Data Transformer/Data"):
+        if filename.endswith(".pdf"):
+            text = get_text_from_pdf(file_path)
+        else:
+            text = get_text_from_docx(file_path)
+
+        print(f"FILENAME: {file_path}")
+        print(f"Extracted text: {text[:500]}")
 
         result = main(system, get_user_count_prompt(text), structure=NumberTransformers)
         number_of_transformers = int(result.get("types_of_transformers_offered", 0))
 
         for i in range(1, number_of_transformers+1):
             results_dict = main(system, get_extract_prompt(i, text=text), structure=TransformerInfo)
+            results_dict["filename"] = filename
             df_list.append(pd.DataFrame([results_dict]))
+
+        counter += 1
+        # if counter > 8:
+        #     break
 
     # Concatenate all DataFrames into one DataFrame
     df = pd.concat(df_list, ignore_index=True)
 
-    df.to_csv("transformer_data2.csv", index=False, encoding="utf-8")
-    print("Data saved to transformer_data.csv")
+    df.to_csv("transformer_data_examples.csv", index=False, encoding="utf-8")
+    print("Data saved to transformer_data_examples.csv")
