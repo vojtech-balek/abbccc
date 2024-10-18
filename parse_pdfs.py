@@ -16,13 +16,13 @@ class TransformerInfo(BaseModel):
     suppliers_currency: Optional[str] = None
     transformer_unit_price: Optional[int] = None
     dry_or_oil: Optional[str] = None
-    rated_power_kVA: Optional[int] = None
+    rated_power_kVA: Optional[float] = None
     primary_winding: Optional[str] = None
     secondary_winding: Optional[str] = None
-    no_load_loss: Optional[int] = None
-    full_load_loss_75: Optional[int] = None
-    full_load_loss_120: Optional[int] = None
-    rated_volt_primary_side: Optional[int] = None
+    no_load_losses: Optional[float] = None
+    full_load_losses_75: Optional[float] = None
+    full_load_losses_120: Optional[float] = None
+    rated_volt_primary_side: Optional[float] = None
 
 
 class NumberTransformers(BaseModel):
@@ -46,19 +46,22 @@ system = "You are an expert finder of key information from text."
 def get_extract_prompt(transformer_number:int, text):
     user_extract = (f"Extract the requested information from the offer."
                     f"There could be offered multiple different transformers. Extract information about transformer "
-                    f"number {transformer_number}."
-                    f"Quantity explains how many transformer units number {transformer_number} are being sold."
-                    f""" Additional restrictions:
-                        dry_or_oil (either "Dry", "Oil")
-                        Rated power[kVA]: ___
-                        Primary winding material[Aluminium/Copper]: ___
-                        Secondary winding material[Aluminium/Copper]: ___
-                        No load losses[W]: ___
-                        Full Load Loss at 75°C [W]
-                        Full Load Loss at 120°C [W]
-                        Rated Voltage Primary side [kV]: ___
+                    f"number {transformer_number}. Make sure to follow the restrictions-convert to correct units."
+                    f"Additional restrictions:"
+                    f""" 
+                        quantity: explains how many transformer units number {transformer_number} are being sold."
+                        dry_or_oil (choose "Dry", "Oil"),
+                        suppliers_currency: (EUR, CZK..),
+                        transformer_unit_price: price of the specified transformer,
+                        rated_power_kVA (units kVA),
+                        primary_winding (choose "Aluminium", "Copper"),
+                        secondary_winding (choose "Aluminium", "Copper"),
+                        no_load_loss (units: W),
+                        full_load_loss_75 (units: W): Full Load Loss at 75°C,
+                        full_load_loss_120 (units: W): Full Load Loss at 120°C,
+                        rated_volt_primary_side (units: kV)
                     """
-                       f"Offer text: \\n {text}")
+                    f"\\n Offer text: \\n {text}")
 
     return user_extract
 
@@ -111,10 +114,14 @@ if __name__ == '__main__':
     df_list = []
 
     # Example usage
-    for pdf_path in yield_pdfs_paths("04 - Data Transformer/Data"):
+    for file_path, filename in yield_pdfs_paths("04 - Data Transformer/Data"):
+        if filename.endswith(".pdf"):
+            text = get_text_from_pdf(file_path)
+        else:
+            text = get_text_from_docx(file_path)
 
-        text = get_text_from_pdf(pdf_path)
-        print(f"PDF: {pdf_path}")
+
+        print(f"PDF: {file_path}")
         print(f"Extracted text: {text[:100]}")
 
         result = main(system, get_user_count_prompt(text), structure=NumberTransformers)
