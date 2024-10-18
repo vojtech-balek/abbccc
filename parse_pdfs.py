@@ -1,53 +1,72 @@
-import os
-from time import sleep
-
-import requests
-import base64
 import json
-from parse_pdf import get_text_from_pdf
-
-
-example_list = ['QT-20-Hitachi2_Rev0.pdf', '2022 08 03 SGB Ang SGB4 R00.pdf', 'Best2 - A0R0 - BEST Technical Datasheet.PDF',
-                'QT-22-Hitachi9_Rev0.pdf', 'QUOTATION Sonmez2.pdf', 'RDOSea3A.pdf', 'SGB4 Datasheet Pos.1000.pdf']
-
-filepath = '04 - Data Transformer/Examples/'
-
-# parsed_pdfs = dict(zip(example_list, [get_text_from_pdf(filepath+filename) for filename in example_list]))
-import json
-from parse_pdf import get_text_from_pdf
+from parse_pdf import get_text_from_pdf, yield_pdfs_paths
 from pydantic import BaseModel
 from openai import AzureOpenAI
+from typing import Optional
+import pandas as pd
 
+
+"""
+Tady nadefinuj, jak to ma vypadat:
+"""
 
 class TransformerInfo(BaseModel):
-    date: str
-    rated_power: int
-    # derated_power: int
-    # secondary_rated_power: int
-    primary_winding: str
-    secondary_winding: str
-    no_load_loss: int
-    full_load_loss_75: int
-    full_load_loss_120: int
-    rated_volt_primary_side: float
+    date: Optional[str] = None
+    quantity: Optional[int] = None
+    suppliers_currency: Optional[str] = None
+    transformer_unit_price: Optional[int] = None
+    dry_or_oil: Optional[str] = None
+    rated_power_kVA: Optional[int] = None
+    primary_winding: Optional[str] = None
+    secondary_winding: Optional[str] = None
+    no_load_loss: Optional[int] = None
+    full_load_loss_75: Optional[int] = None
+    full_load_loss_120: Optional[int] = None
+    rated_volt_primary_side: Optional[int] = None
 
 
-# Configuration
-with open("credentials.json", "r") as f:
-    credentials = json.load(f)
+class NumberTransformers(BaseModel):
+    types_of_transformers_offered: float
 
-ENDPOINT = credentials["endpoint"]
-API_KEY = credentials["api_key"]
-headers = {
-    "Content-Type": "application/json",
-    "api-key": API_KEY,
-}
+#filepath = '04 - Data Transformer/Examples/QT-20-Hitachi2_Rev0.pdf'
 
-system_prompt = ("You are an expert finder of key information from text."
-                 "You always reply just with the information, no explanations. Provide only one value per information."
-                 "Your task is to find information regarding tranformators and transformators only. Please refrain from providing"
-                 "imformation for any other type of device. Make sure your information is always correct."
-                 "If the tasked information is not provided, reply with a NA value.")
+#filepath = '04 - Data Transformer/Examples/2022 08 03 SGB Ang SGB4 R00.pdf'
+
+# filepath = '04 - Data Transformer/Examples/QT-22-Hitachi9_Rev0.pdf'
+
+# filepath = '04 - Data Transformer/Examples/QUOTATION Sonmez2.pdf'
+
+# filepath = '04 - Data Transformer/Examples/RDOSea3A.pdf'
+
+
+
+# Define prompts
+system = "You are an expert finder of key information from text."
+
+def get_extract_prompt(transformer_number:int, text):
+    user_extract = (f"Extract the requested information from the offer."
+                    f"There could be offered multiple different transformers. Extract information about transformer "
+                    f"number {transformer_number}."
+                    f"Quantity explains how many transformer units number {transformer_number} are being sold."
+                    f""" Additional restrictions:
+                        dry_or_oil (either "Dry", "Oil")
+                        Rated power[kVA]: ___
+                        Primary winding material[Aluminium/Copper]: ___
+                        Secondary winding material[Aluminium/Copper]: ___
+                        No load losses[W]: ___
+                        Full Load Loss at 75°C [W]
+                        Full Load Loss at 120°C [W]
+                        Rated Voltage Primary side [kV]: ___
+                    """
+                       f"Offer text: \\n {text}")
+
+    return user_extract
+
+
+def get_user_count_prompt(text):
+    return (f"What is the number of different types of transformer units offered for sale in the report?"
+                  f"Report: {text}")
+
 
 
 def get_credentials():
@@ -63,49 +82,50 @@ def initialize_client(credentials):
     )
 
 
-def main():
-    for file in example_list:
-        text = get_text_from_pdf(filepath + file)
-        # Initialize client
-        if file == '2022 08 03 SGB Ang SGB4 R00.pdf':
-            text+= get_text_from_pdf(filepath + 'SGB4 Datasheet Pos.1000.pdf')
-        print(f"Now in {file}")
-        user_prompt = f"""
-            Find these informations from the text. Don't give any explanations, fill only the places indicated with "___".
-             {text}
-            Date: ___
-            Rated power[kVA]: ___
-            Primary winding material[Aluminium/Copper]: ___
-            Secondary winding material[Aluminium/Copper]: ___
-            No load losses[W]: ___
-            Full Load Loss at 75°C [W]
-            Full Load Loss at 120°C [W]
-            Rated Voltage Primary side[kV]: ___
-            """
-        credentials = get_credentials()
-        client = initialize_client(credentials)
+def main(system_prompt, user_prompt, structure):
+    credentials = get_credentials()
+    client = initialize_client(credentials)
 
-        # Make the API call
-        completion = client.beta.chat.completions.parse(
-            model="MODEL_DEPLOYMENT_NAME",
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt},
-            ],
-            response_format=TransformerInfo,
-        )
+    # Make the API call
+    completion = client.beta.chat.completions.parse(
+        model="MODEL_DEPLOYMENT_NAME",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        response_format=structure,
+    )
 
-        # Access the parsed response
-        transformer_info = completion.choices[0].message.parsed
+    # Access the parsed response
+    transformer_info = completion.choices[0].message.parsed
 
-        # Print the structured response
-        print("\nExtracted Information:")
-        print(json.dumps(transformer_info.model_dump(), indent=2))
+    # Print the structured response
+    print("\nExtracted Information:")
+    print(json.dumps(transformer_info.model_dump(), indent=2))
 
-        sleep(10)
-        # return transformer_info
+    return transformer_info.model_dump()
 
 
 
 if __name__ == '__main__':
-    main()
+    df_list = []
+
+    # Example usage
+    for pdf_path in yield_pdfs_paths("04 - Data Transformer/Data"):
+
+        text = get_text_from_pdf(pdf_path)
+        print(f"PDF: {pdf_path}")
+        print(f"Extracted text: {text[:100]}")
+
+        result = main(system, get_user_count_prompt(text), structure=NumberTransformers)
+        number_of_transformers = int(result.get("types_of_transformers_offered", 0))
+
+        for i in range(1, number_of_transformers+1):
+            results_dict = main(system, get_extract_prompt(i, text=text), structure=TransformerInfo)
+            df_list.append(pd.DataFrame([results_dict]))
+
+    # Concatenate all DataFrames into one DataFrame
+    df = pd.concat(df_list, ignore_index=True)
+
+    df.to_csv("transformer_data2.csv", index=False, encoding="utf-8")
+    print("Data saved to transformer_data.csv")
