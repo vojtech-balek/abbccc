@@ -73,5 +73,3 @@ def get_text_from_pdf(filepath):
             full_text.append('\n=== Page Break ===\n')
 
         return '\n'.join(full_text)
-
-
