@@ -1,0 +1,179 @@
+date,quantity,suppliers_currency,transformer_unit_price,dry_or_oil,rated_power_kVA,primary_winding,secondary_winding,no_load_losses,full_load_losses_75,full_load_losses_120,rated_volt_primary_side,filename
+28-April-21,6,EUR,708000,Oil,19080.0,,,,,,33.0,Best1 - USA - ABB - Project Hydrogen Mitshubishi US for Oil Transformers.pdf
+22.04.2021,1,,,Oil,19080.0,,,17000.0,90000.0,,33.0,Best2 - A0R0 - BEST Technical Datasheet.pdf
+2021-04-22,1,EUR,,Oil,19080.0,,,17000.0,90000.0,,33.75,Best2 - A0R0 - BEST Technical Datasheet.pdf
+14/03/2023,4,EUR,235000,Oil,11000.0,,,,,,,Quote Celduc1.00.pdf
+2023-03-14,4,,,Oil,11000.0,Copper,Copper,7800.0,88000.0,,22.0,Technical Celduc1.00.pdf
+2023-03-14,4,,,Oil,11000.0,Copper,,7800.0,,88000.0,22.0,Technical Celduc1.00.pdf
+14/03/2023,1,,,Oil,11000.0,Copper,,7800.0,88000.0,,22.0,Technical Celduc1.00.pdf
+2023-03-14,4,,,Oil,11000.0,Copper,,7800.0,88000.0,,22.0,Technical Celduc1.00.pdf
+30/09/2021,5,EUR,267000,Oil,12000.0,Copper,Copper,8000.0,138000.0,146000.0,21.0,Celme_21-Celme1.pdf
+30/09/2021,5,EUR,267000,Oil,12000.0,Copper,Copper,8000.0,138000.0,146000.0,21.0,Celme_21-Celme1.pdf
+02.12.2020,1,EUR,56200,Dry,5000.0,Aluminium,Aluminium,5000.0,53043.0,61000.0,11.0,QT-20-Hitachi17_Rev-1.pdf
+09.12.2020,3,EUR,79500,Dry,6500.0,Aluminium,Aluminium,5500.0,83478.0,96000.0,6.6,QT-20-Hitachi1_Rev1.pdf
+03-06-2020,26,EUR,127000,Dry,6000.0,Aluminium,Aluminium,9500.0,56520.0,65000.0,33.0,QT-20-Hitachi2_Rev0.pdf
+12.08.2021,1,EUR,195000,Dry,12000.0,Aluminium,Aluminium,15000.0,113043.0,130000.0,21.0,QT-21-Hitachi11_Rev1.pdf
+17.03.2022,1,EUR,291000,Dry,2500.0,Aluminium,Aluminium,2790.0,16522.0,19000.0,20.0,QT-21-Hitachi12_Rev1_EN_H4A.pdf
+17.03.2022,2,EUR,78750,Dry,1000.0,Aluminium,Aluminium,1395.0,7826.0,9000.0,20.0,QT-21-Hitachi12_Rev1_EN_H4A.pdf
+08.06.2021,1,EUR,63600,Dry,2800.0,Aluminium,Aluminium,5200.0,18261.0,21000.0,20.0,QT-21-Hitachi15_Rev.0.pdf
+14.12.2021,10,EUR,1760000,Dry,15000.0,Aluminium,Aluminium,19000.0,117391.0,135000.0,33.0,QT-21-Hitachi7_Rev0.pdf
+09.09.2022,1,EUR,33660,Dry,1500.0,Aluminium,Aluminium,1980.0,,13000.0,10.0,QT-22-Hitachi10_Rev0.pdf
+09.09.2022,2,EUR,20490,Dry,315.0,Aluminium,Aluminium,558.0,,3877.0,10.0,QT-22-Hitachi10_Rev0.pdf
+09.09.2022,2,EUR,35300,Dry,1800.0,Aluminium,Aluminium,2160.0,,14500.0,10.0,QT-22-Hitachi10_Rev0.pdf
+15.02.2023,1,EUR,361500,Dry,2000.0,Aluminium,Aluminium,2691.0,,17600.0,30.0,QT-22-Hitachi13_Rev1_EN_H4A.pdf
+15.02.2023,2,EUR,1072500,Dry,11400.0,Aluminium,Aluminium,17500.0,,122000.0,30.0,QT-22-Hitachi13_Rev1_EN_H4A.pdf
+13.09.2022,1,EUR,210000,Dry,1326.0,Aluminium,Aluminium,2600.0,,14000.0,6.8,QT-22-Hitachi16_Rev6.pdf
+13.09.2022,2,EUR,23100,Dry,1000.0,Aluminium,Aluminium,1395.0,,9000.0,6.8,QT-22-Hitachi16_Rev6.pdf
+13.05.2022,1,EUR,28240,Dry,1250.0,Aluminium,Aluminium,3000.0,8696.0,10000.0,20.0,QT-22-Hitachi20_Rev1.pdf
+16.02.2022,2,EUR,53200,Dry,2500.0,Aluminium,Aluminium,2790.0,16522.0,19000.0,20.0,QT-22-Hitachi21_Rev0.pdf
+16.02.2022,2,EUR,29980,Dry,1000.0,Aluminium,Aluminium,1395.0,7826.0,9000.0,21.5,QT-22-Hitachi21_Rev0.pdf
+11.03.2022,10,EUR,162000,Dry,15000.0,Aluminium,Aluminium,14000.0,143478.0,165000.0,22.0,QT-22-Hitachi3_Rev0.pdf
+05.08.2022,1,EUR,218000,Dry,15000.0,Aluminium,Aluminium,19000.0,117391.0,135000.0,30.0,QT-22-Hitachi4_Rev0.pdf
+18.08.2022,1,EUR,197000,Dry,15000.0,Aluminium,Aluminium,14000.0,130435.0,150000.0,6.3,QT-22-Hitachi5_Rev0_EN_H4A.pdf
+19.07.2022,16,EUR,3072000,Dry,8000.0,Aluminium,Aluminium,12000.0,82608.7,95000.0,33.0,QT-22-Hitachi9_Rev0.pdf
+06.10.2020,1,,,Oil,1600.0,Copper,Aluminium,,,,24.0,MoreTAS1.pdf
+11/02/2021,1,EUR,72000,Dry,5400.0,Aluminium,Aluminium,11800.0,35500.0,40000.0,21.0,RDOSea1A.pdf
+11/02/2021,2,EUR,78000,Dry,5400.0,Aluminium,Aluminium,11800.0,35500.0,40000.0,21.0,RDOSea1A.pdf
+27/03/2023,4,EUR,362000,Oil,11000.0,Aluminium,Aluminium,10300.0,75000.0,,22.0,RDOSea2C.pdf
+27/03/2023,2,EUR,715000,Oil,22000.0,Aluminium,Aluminium,16500.0,180000.0,,22.0,RDOSea2C.pdf
+07/03/2023,21,EUR,398000,Oil,15000.0,Aluminium,Aluminium,9000.0,120000.0,,20.0,RDOSea3A.pdf
+19.07.2021,1,,,Dry,630.0,Aluminium,Aluminium,990.0,,7100.0,20.0,2021.07.19-EN-Datasheet_SGB3-1000 Rev00 - 630 kVA.pdf
+26.07.2021,1,,,Dry,7000.0,Aluminium,Aluminium,6250.0,,73072.0,20.0,2021.07.26-EN-Datasheet_SGB3-2000 Rev00 - 7000 kVA Dy11.pdf
+26.07.2021,1,,,Dry,7000.0,Aluminium,Aluminium,6300.0,,72492.0,20.0,2021.07.26-EN-Datasheet_SGB3-3000 Rev00 - 7000 kVA Dd0.pdf
+02.08.2022,1,EUR,150000,Dry,8000.0,Aluminium,Aluminium,,,,,2022 08 03 SGB Ang SGB4 R00.pdf
+02.08.2022,1,EUR,57500,Dry,,,,,,,,2022 08 03 SGB Ang SGB4 R00.pdf
+02.08.2022,16,EUR,150000,Dry,8000.0,Copper,Aluminium,,,,,2022 08 03 SGB Ang SGB4 R00.pdf
+08.09.2021,5,EUR,620000,Oil,12000.0,Copper,Copper,,,,21.0,Burget Price SGB7.pdf
+08.09.2021,5,EUR,620000,Oil,12000.0,Copper,Copper,,,,21.0,Burget Price SGB7.pdf
+08.09.2021,5,EUR,620000,Oil,12000.0,,,,,,21.0,Burget Price SGB7.pdf
+08.09.2021,5,EUR,620000,Oil,12000.0,Copper,Copper,,,,21.0,Burget Price SGB7.pdf
+07.06.2021,1,,,Dry,2800.0,Aluminium,Aluminium,3400.0,,27000.0,24.0,Datenblatt SGB9.pdf
+07.06.2021,1,,,Dry,1400.0,Aluminium,Aluminium,3400.0,,27000.0,24.0,Datenblatt SGB9.pdf
+07.06.2021,3,,,Dry,2800.0,Aluminium,Aluminium,3400.0,,27000.0,24.0,Datenblatt SGB9.pdf
+,1,,,Dry,1500.0,Aluminium,Aluminium,1875.0,,12400.0,10.0,Datenblatt_1500_10_420_6_IP23.pdf
+,,,,Dry,1500.0,Aluminium,Aluminium,1875.0,,12400.0,10.0,Datenblatt_1500_10_690_6_IP23.pdf
+,,,,Dry,1800.0,Aluminium,Aluminium,2160.0,,14500.0,10.0,Datenblatt_1800_10_400_6_IP23.pdf
+,1,CZK,,Oil,250.0,Aluminium,Aluminium,468.0,,3400.0,10.0,Datenblatt_250_10_420_6_IP23.pdf
+04.08.2022,5,EUR,40000,Dry,1300.0,Aluminium,Aluminium,,,,6.8,SGB Ang SGB10 R03.pdf
+04.08.2022,5,EUR,40000,Dry,1300.0,Copper,Copper,,,,6.8,SGB Ang SGB10 R03.pdf
+04.08.2022,5,EUR,40000,Dry,1300.0,Aluminium,Aluminium,,,,6.8,SGB Ang SGB10 R03_signed.pdf
+04.08.2022,5,EUR,40000,Dry,1300.0,Copper,Copper,,,,6.8,SGB Ang SGB10 R03_signed.pdf
+04.08.2022,1,EUR,25900,Dry,1000.0,,,,,,6.0,SGB Ang SGB10 R03_signed.pdf
+2021-06-07,1,EUR,43400,Dry,,,,,,,,SGB Angebot ABB RfQ-235586.pdf
+17.03.2023,3,EUR,46700,Dry,2000.0,Aluminium,Aluminium,,,,,SGB Off ABB RfQ-284351-0.pdf
+26.07.2021,5,EUR,111000,Dry,7000.0,Copper,Aluminium,,,,20.0,SGB Quote SGB3-00-ABB RFQ-237998-0_signedRHE.pdf
+2021-07-26,5,EUR,111000,Dry,7000.0,Copper,Aluminium,,,,,SGB Quote SGB3-00-ABB RFQ-237998-0_signedRHE.pdf
+13.08.2021,10,EUR,125000,Dry,12000.0,Copper,Aluminium,,,,21.0,SGB Quote SGB6-01-ABB RFQ-240466-0_signed.pdf
+09.11.2022,10,EUR,155000,Dry,11400.0,Aluminium,Aluminium,,,,30.0,SGB Quote SGB8 ABB 274133 R00.pdf
+08.12.2020,1,,,Dry,6500.0,Aluminium,Aluminium,11750.0,,76000.0,6.6,SGB1 datasheet - Rev01.pdf
+08.12.2020,1,,,Dry,3250.0,Aluminium,Aluminium,11750.0,,76000.0,7.2,SGB1 datasheet - Rev01.pdf
+08.12.2020,1,,,,6500.0,Aluminium,Aluminium,11750.0,,76000.0,7.2,SGB1 datasheet - Rev01.pdf
+05.10.2020,1,EUR,206000,Oil,6500.0,Copper,Copper,11750.0,,76000.0,6.0,SGB1 offer V2 RFQ-210204 Air liquide.pdf
+05.10.2020,2,EUR,1000,,,,,,,,,SGB1 offer V2 RFQ-210204 Air liquide.pdf
+07.02.2022,1,,,Dry,5400.0,Aluminium,Aluminium,6150.0,,44453.0,6.8,SGB10 Datasheets DE R01.pdf
+07.02.2022,2,,,Dry,1350.0,Aluminium,Aluminium,1723.0,,11571.0,6.8,SGB10 Datasheets DE R01.pdf
+07.02.2022,3,EUR,,Dry,5400.0,Aluminium,Aluminium,6150.0,,44453.0,6.8,SGB10 Datasheets DE R01.pdf
+07.02.2022,1,,,Dry,1000.0,Aluminium,Aluminium,1395.0,,9000.0,6.8,SGB10 Datasheets DE R01.pdf
+05.08.2022,1,,,Dry,1326.0,Aluminium,Aluminium,1800.0,,11000.0,7.2,SGB10 Datasheets DE R03.pdf
+05.08.2022,2,,,Dry,662.0,Aluminium,Aluminium,2700.0,,15000.0,7.2,SGB10 Datasheets DE R03.pdf
+05.08.2022,12,,,Dry,1326.0,Aluminium,Aluminium,1800.0,,11000.0,6.8,SGB10 Datasheets DE R03.pdf
+17.03.2023,1,,,Dry,2000.0,Aluminium,Aluminium,2340.0,,16000.0,22.0,SGB11_1000.pdf
+17.03.2023,12,,,Dry,2000.0,Aluminium,Aluminium,2340.0,,16000.0,24.0,SGB11_1000.pdf
+17.03.2023,1,EUR,,Dry,2000.0,Aluminium,Aluminium,2340.0,,16000.0,24.0,SGB11_1000.pdf
+2023-03-17,1,,,Dry,2000.0,Aluminium,Aluminium,2340.0,,16000.0,22.0,SGB11_1000.pdf
+2023-03-17,1,,,Dry,2000.0,Aluminium,Aluminium,2340.0,,16000.0,22.0,SGB11_1000.pdf
+17.03.2023,,,,,2000.0,Aluminium,Aluminium,2340.0,,16000.0,22.0,SGB11_1000.pdf
+17.03.2023,1,EUR,,Dry,2000.0,Aluminium,Aluminium,2340.0,,16000.0,24.0,SGB11_1000.pdf
+2023-03-17,1,EUR,,Dry,2000.0,Aluminium,Aluminium,2340.0,,16000.0,22.0,SGB11_1000.pdf
+17.03.2023,1,,,Dry,2000.0,Aluminium,Aluminium,2340.0,,16000.0,22.0,SGB11_1000.pdf
+17.03.2023,1,,,Dry,2000.0,Aluminium,Aluminium,2340.0,16000.0,16000.0,22.0,SGB11_1000.pdf
+17.03.2023,,,,Dry,2000.0,Aluminium,Aluminium,2340.0,,16000.0,22.0,SGB11_1000.pdf
+17.03.2023,1,,,Dry,2000.0,Aluminium,Aluminium,2340.0,,16000.0,24.0,SGB11_1000.pdf
+31.08.2020,1,,,Dry,6000.0,Aluminium,Aluminium,12200.0,,66000.0,30.0,SGB2 -Technical_Datasheet_V3.pdf
+31.08.2020,12,EUR,66000,Dry,6300.0,Aluminium,Aluminium,12200.0,,66000.0,30.0,SGB2 -Technical_Datasheet_V3.pdf
+31.08.2020,1,,,Dry,6000.0,Aluminium,Aluminium,12200.0,,66000.0,36.0,SGB2 -Technical_Datasheet_V3.pdf
+2020-06-10,26,EUR,99000,Dry,6000.0,Copper,Aluminium,,,,33.0,SGB2_ 26 special transformer 6 MVA 33 kV 04-09-2020.pdf
+02.08.2022,1,,,Dry,8000.0,Aluminium,Aluminium,9500.0,,90000.0,33.0,SGB4 Datasheet Pos.1000.pdf
+02.08.2022,1,,,,4000.0,Aluminium,Aluminium,9500.0,,90000.0,33.0,SGB4 Datasheet Pos.1000.pdf
+02.08.2022,3,,,Dry,4000.0,Aluminium,Aluminium,9500.0,90000.0,,33.0,SGB4 Datasheet Pos.1000.pdf
+09.09.2022,2,EUR,37250,,1800.0,,,2400.0,14500.0,,10.0,SGB5_ABB.pdf
+09.09.2022,1,EUR,30710,,1500.0,,,1877.0,,12429.0,10.0,SGB5_ABB.pdf
+09.09.2022,1,EUR,30160,,1500.0,,,1877.0,12429.0,,10.0,SGB5_ABB.pdf
+13.08.2021,1,,,Dry,12000.0,Aluminium,Aluminium,10000.0,,,21.0,SGB7 2021.08.12-EN-Datasheet_12MVA 20-0.460kV Dy5d0 AF REV00.pdf
+08.02.2023,1,,,Dry,12500.0,Aluminium,Aluminium,13750.0,88065.0,,36.0,SGB8 Data Sheet Rev01.pdf
+10.02.2023,2,EUR,580000,Oil,15000.0,Copper,Copper,16000.0,110000.0,,10.3,QUOTATION Sonmez1.pdf
+2023-02-10,2,EUR,580000,Oil,15000.0,Copper,Copper,16000.0,110000.0,,10.3,QUOTATION Sonmez1.pdf
+9.09.2021,2,EUR,34500,Dry,1600.0,Aluminium,Aluminium,3500.0,,12000.0,20.0,QUOTATION Sonmez2.pdf
+2021-09-09,1,EUR,36600,Dry,1400.0,Aluminium,Aluminium,3900.0,,14000.0,20.0,QUOTATION Sonmez2.pdf
+9.09.2021,1,EUR,51000,Dry,3000.0,Aluminium,Aluminium,6000.0,22000.0,,20.0,QUOTATION Sonmez2.pdf
+9.09.2021,1,EUR,23500,Dry,630.0,Aluminium,Aluminium,1900.0,,8000.0,20.0,QUOTATION Sonmez2.pdf
+2021-11-03,10,EUR,265000,Dry,12000.0,Aluminium,Copper,21000.0,60000.0,,21.0,QUOTATION Sonmez3.pdf
+3.11.2021,10,EUR,210000,Oil,12000.0,Copper,Copper,11000.0,78000.0,,21.0,QUOTATION Sonmez3.pdf
+3.11.2021,1,EUR,,,,,,,,,,QUOTATION Sonmez3.pdf
+2021-11-03,1,EUR,,,,,,,,,,QUOTATION Sonmez3.pdf
+29.07.2021,10,EUR,195000,Oil,12000.0,Copper,Copper,6000.0,84000.0,,21.0,QUOTATION Sonmez4.pdf
+29.07.2021,,EUR,,Oil,12000.0,Copper,Copper,6000.0,,84000.0,21.0,QUOTATION Sonmez4.pdf
+22.08.2022,2,EUR,629000,Oil,12000.0,Copper,Copper,9500.0,90000.0,,20.0,QUOTATION Sonmez5.pdf
+22.08.2022,1,EUR,301000,Oil,12000.0,Copper,Copper,9000.0,88000.0,,20.0,QUOTATION Sonmez5.pdf
+22.08.2022,1,EUR,,Oil,12000.0,Copper,Copper,19600.0,185500.0,,20.0,QUOTATION Sonmez5.pdf
+,,EUR,,,,,,,,,,QUOTATION Sonmez5.pdf
+2.09.2021,1,EUR,139000,Dry,6113.0,Aluminium,Aluminium,9600.0,40000.0,,6.0,QUOTATION Sonmez6.pdf
+02.09.2021,1,EUR,75000,Dry,2039.0,Aluminium,Aluminium,5500.0,20000.0,,6.0,QUOTATION Sonmez6.pdf
+26.08.2021,12,EUR,215000,Dry,10800.0,Aluminium,Aluminium,23000.0,82000.0,,21.0,QUOTATION Sonmez7.pdf
+26.08.2021,12,EUR,175000,Oil,10800.0,Aluminium,Aluminium,6100.0,82000.0,,21.0,QUOTATION Sonmez7.pdf
+26.08.2021,4,EUR,55000,Dry,2500.0,Aluminium,Aluminium,5300.0,24000.0,26500.0,10.5,QUOTATION Sonmez7.pdf
+26.08.2021,4,EUR,42000,Oil,2500.0,Aluminium,Aluminium,3400.0,26500.0,26500.0,10.5,QUOTATION Sonmez7.pdf
+3.11.2021,5,EUR,216000,Dry,5400.0,Aluminium,Aluminium,9000.0,25000.0,,30.0,QUOTATION Sonmez8.pdf
+15.08.2022,5,EUR,81000,Dry,1325.0,Aluminium,Aluminium,3700.0,15000.0,20000.0,6.8,QUOTATION Sonmez9.rev1.pdf
+15.08.2022,1,EUR,70000,Dry,1000.0,Aluminium,Aluminium,2700.0,10000.0,,6.8,QUOTATION Sonmez9.rev1.pdf
+09/03/2022,10,EUR,161700,Dry,15000.0,Aluminium,Aluminium,13000.0,126000.0,145000.0,20.0,QN-TMC1-Quotation_OPP-22-5263365 Neste Porvoo in Finland.pdf
+2022-03-09,40,EUR,2300,Dry,,Aluminium,Aluminium,,,3200.0,,QN-TMC1-Quotation_OPP-22-5263365 Neste Porvoo in Finland.pdf
+2022-02-01,10,EUR,161700,Dry,15000.0,Aluminium,Aluminium,13000.0,126000.0,145000.0,20.0,QN-TMC10-rev.2_Quotation_RFQ-248403-0_OPP-21-5049422 BP Ørsted Lingen.pdf
+06/04/2022,10,EUR,852000,Dry,15000.0,Aluminium,Aluminium,13000.0,126000.0,145000.0,10.5,QN-TMC11-Quotation_Wärtsilä - Vantaan H2 project - OPP-21-4995847.pdf
+06/04/2022,40,EUR,,Dry,15000.0,Aluminium,Aluminium,13000.0,126000.0,15000.0,10.5,QN-TMC11-Quotation_Wärtsilä - Vantaan H2 project - OPP-21-4995847.pdf
+15/12/2021,2,EUR,176800,Dry,15450.0,Aluminium,Aluminium,13000.0,126000.0,145000.0,22.0,"QN-TMC12_rev.1_Quotation_RFQ-230738-0_OPP-21-4660027, Hydrogenplant NN.pdf"
+18/05/2022,1,EUR,25400,Dry,1250.0,Aluminium,Aluminium,2700.0,,11800.0,20.0,QN-TMC13-rev.1_Quotation_RFQ-255592-0_H2 -Energiefabrik Lübesse for CONVERTOR.pdf
+12/09/2022,1,EUR,31150,Dry,1500.0,Aluminium,Aluminium,1870.0,,12420.0,10.0,QN-TMC14-Quotation_RFQ-271715-0_H2 - Ahlen Reflex.pdf
+12/09/2022,2,EUR,,Dry,250.0,Aluminium,Aluminium,468.0,,3400.0,10.0,QN-TMC14-Quotation_RFQ-271715-0_H2 - Ahlen Reflex.pdf
+12/09/2022,2,EUR,31150,Dry,1800.0,Aluminium,Aluminium,2160.0,,14500.0,10.0,QN-TMC14-Quotation_RFQ-271715-0_H2 - Ahlen Reflex.pdf
+06/10/2021,2,EUR,225800,Dry,15000.0,Aluminium,Aluminium,22000.0,,102000.0,34.5,QN-TMC2-Quotation_RFQ-237028-0_OPP-20-3943469 NextChem.pdf
+10/08/2022,9,EUR,247600,Dry,15000.0,Aluminium,Aluminium,16000.0,,160000.0,30.0,QN-TMC3-Quotation_RFQ-269102-0_OPP-22-5552447 Salzgitter Hydrogen 100MW.pdf
+17/06/2021,4,EUR,28000,Dry,1600.0,Aluminium,Aluminium,1980.0,,13000.0,20.0,QN-TMC4-Quotation (002).pdf
+,1,EUR,15600,Dry,630.0,Aluminium,Aluminium,990.0,,7100.0,20.0,QN-TMC4-Quotation (002).pdf
+17/06/2021,2,EUR,14000,Dry,500.0,Aluminium,Aluminium,810.0,,5630.0,20.0,QN-TMC4-Quotation (002).pdf
+18/03/2022,4,EUR,28400,Dry,2500.0,Aluminium,Aluminium,2790.0,,19000.0,20.0,QN-TMC5-Quotation_RFQ-237807-1_Eemshaven PW.pdf
+18/03/2022,2,EUR,25300,Dry,1000.0,Aluminium,Aluminium,1395.0,,9000.0,20.0,QN-TMC5-Quotation_RFQ-237807-1_Eemshaven PW.pdf
+18/03/2022,4,EUR,48400,Dry,2500.0,Aluminium,Aluminium,2790.0,,19000.0,20.0,QN-TMC5-Quotation_RFQ-237807-1_Eemshaven PW.pdf
+18/03/2022,2,EUR,25300,Dry,1000.0,Aluminium,Aluminium,1395.0,,9000.0,20.0,QN-TMC5-Quotation_RFQ-237807-1_Eemshaven PW.pdf
+04/02/2021,5,EUR,56400,,2500.0,,,,,,,QN-TMC6_kommerziell.pdf
+04/02/2021,5,EUR,54700,Dry,15600.0,,,,,,,QN-TMC6_kommerziell.pdf
+,5,,,Dry,5600.0,Aluminium,Aluminium,8000.0,,43000.0,21.0,QN-TMC6_rev1_technical.pdf
+,5,,,Dry,5600.0,Aluminium,Aluminium,7000.0,,58000.0,21.0,QN-TMC6_rev1_technical.pdf
+10/06/2021,1,EUR,51000,Dry,2800.0,Aluminium,Aluminium,4000.0,,21500.0,20.0,QN-TMC7-Quotation.pdf
+09/09/2022,5,EUR,,Dry,1326.0,Aluminium,Aluminium,3500.0,,13000.0,6.8,QN-TMC8-rev.1_Quotation_RFQ-252580-1_5MW H2 PLANT Wyhlen GERMANY.pdf
+09/09/2022,1,EUR,,Dry,1000.0,Aluminium,Aluminium,1395.0,,9000.0,6.8,QN-TMC8-rev.1_Quotation_RFQ-252580-1_5MW H2 PLANT Wyhlen GERMANY.pdf
+06/12/2022,21,EUR,252600,Dry,15000.0,Aluminium,Aluminium,16000.0,,160000.0,30.0,QN-TMC9-Quotation_RFQ-277276-0_OPP-22-5757363 Arcadia.pdf
+01/12/2020,3,EUR,74500,Dry,3250.0,Aluminium,Aluminium,10000.0,80000.0,,20.0,OVTrasfor2-1.pdf
+2020-05-07,26,EUR,104000,Dry,6000.0,Aluminium,Aluminium,85000.0,97000.0,,33.0,OVTrasfor3-2.pdf
+,10,EUR,128000,Dry,10000.0,Aluminium,Aluminium,17000.0,97000.0,,11.0,OVTrasfor3-2.pdf
+28/11/2020,1,EUR,70000,Dry,5000.0,Aluminium,Aluminium,8000.0,43000.0,,11.0,OVTrasfor9-2.pdf
+01/06/2021,10,EUR,240000,Dry,25000.0,Aluminium,Aluminium,45000.0,48000.0,,22.0,QTTrasfor1.pdf
+14/12/2021,2,EUR,148000,Dry,15000.0,Aluminium,Aluminium,21000.0,120000.0,,22.0,QTTrasfor10-4.pdf
+2021-12-14,0,EUR,149000,Dry,7500.0,Aluminium,Aluminium,21000.0,120000.0,,22.0,QTTrasfor10-4.pdf
+27/09/2021,2,EUR,172000,Dry,15000.0,Aluminium,Aluminium,28000.0,120000.0,,34.5,QTTrasfor4-1.pdf
+04/05/2021,5,EUR,120000,Dry,15000.0,Aluminium,Aluminium,18000.0,118000.0,,6.3,QTTrasfor5-2.pdf
+10 Sep 2021,1,EUR,42000,Dry,3000.0,Aluminium,Aluminium,5000.0,27000.0,,20.0,QTTrasfor6 Budget.pdf
+10 Sep 2021,2,EUR,34900,Dry,1600.0,Aluminium,Aluminium,1850.0,3700.0,,20.0,QTTrasfor6 Budget.pdf
+10 Sep 2021,1,EUR,950,Dry,3000.0,Aluminium,Aluminium,5000.0,27000.0,,20.0,QTTrasfor6 Budget.pdf
+31 Aug 2021,1,EUR,57800,Dry,2039.0,Aluminium,Aluminium,20000.0,,94000.0,6.0,QTTrasfor7.pdf
+31 Aug 2021,1,EUR,57800,Dry,6113.0,Aluminium,Aluminium,20000.0,,94000.0,6.0,QTTrasfor7.pdf
+24 May 2022,1,EUR,660000,Dry,5400.0,Aluminium,Aluminium,100000.0,,,30.0,QTTrasfor8-2.pdf
+2020-06-10,26,EUR,99000,Dry,6000.0,Aluminium,Aluminium,12200.0,,66000.0,33.0,SGB2_ABB.pdf
+11/09/2020,26,EUR,99000,Dry,6000.0,Aluminium,Aluminium,12200.0,,66000.0,33.0,SGB2_ABB.pdf
+02.08.2022,16,EUR,150000,Dry,8000.0,Aluminium,Aluminium,9500.0,90000.0,90000.0,33.0,SGB4-Datasheet.pdf
+02.08.2022,1,EUR,57500,Dry,8000.0,Aluminium,Aluminium,9500.0,,90000.0,33.0,SGB4-Datasheet.pdf
+2022-08-02,1,EUR,150000,Dry,8000.0,Aluminium,Aluminium,9500.0,90000.0,90000.0,33.0,SGB4-Datasheet.pdf
+02.08.2022,4,EUR,22000,Dry,8000.0,Aluminium,Aluminium,9500.0,,90000.0,33.0,SGB4-Datasheet.pdf
+09.09.2022,2,EUR,37250,Oil,1800.0,Aluminium,Aluminium,2400.0,,14500.0,10.0,SGB5_ABB.pdf
+09.09.2022,2,EUR,11340,,250.0,Aluminium,Aluminium,468.0,,3400.0,10.0,SGB5_ABB.pdf
+09.09.2022,1,EUR,30160,Dry,1500.0,Aluminium,Aluminium,1877.0,,12429.0,10.0,SGB5_ABB.pdf

@@ -1,5 +1,5 @@
 import json
-from parse_pdf import get_text_from_pdf, yield_pdfs_paths
+from parse_pdf import get_text_from_pdf, yield_pdfs_paths, get_text_from_docx
 from pydantic import BaseModel
 from openai import AzureOpenAI
 from typing import Optional
@@ -51,7 +51,7 @@ def get_extract_prompt(transformer_number:int, text):
                     f""" 
                         quantity: explains how many transformer units number {transformer_number} are being sold."
                         dry_or_oil (choose "Dry", "Oil"),
-                        suppliers_currency: (EUR, CZK..),
+                        suppliers_currency (EUR, CZK..),
                         transformer_unit_price: price of the specified transformer,
                         rated_power_kVA (units kVA),
                         primary_winding (choose "Aluminium", "Copper"),
@@ -69,7 +69,6 @@ def get_extract_prompt(transformer_number:int, text):
 def get_user_count_prompt(text):
     return (f"What is the number of different types of transformer units offered for sale in the report?"
                   f"Report: {text}")
-
 
 
 def get_credentials():
@@ -120,19 +119,19 @@ if __name__ == '__main__':
         else:
             text = get_text_from_docx(file_path)
 
-
-        print(f"PDF: {file_path}")
-        print(f"Extracted text: {text[:100]}")
+        print(f"FILENAME: {file_path}")
+        print(f"Extracted text: {text[:500]}")
 
         result = main(system, get_user_count_prompt(text), structure=NumberTransformers)
         number_of_transformers = int(result.get("types_of_transformers_offered", 0))
 
         for i in range(1, number_of_transformers+1):
             results_dict = main(system, get_extract_prompt(i, text=text), structure=TransformerInfo)
+            results_dict["filename"] = filename
             df_list.append(pd.DataFrame([results_dict]))
 
     # Concatenate all DataFrames into one DataFrame
     df = pd.concat(df_list, ignore_index=True)
 
-    df.to_csv("transformer_data2.csv", index=False, encoding="utf-8")
-    print("Data saved to transformer_data.csv")
+    df.to_csv("transformer_data_cleaner.csv", index=False, encoding="utf-8")
+    print("Data saved to transformer_data_cleaner.csv")

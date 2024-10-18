@@ -1,14 +1,55 @@
 import PyPDF2
+import re
+import os
 
+from docx import Document
+
+def get_text_from_docx(filepath):
+    """
+    Extracts text from a DOCX file while attempting to preserve table structures.
+    Returns text with table content grouped by rows and columns.
+    """
+    def process_table_row(row):
+        """Helper function to format table rows into a string."""
+        cells = [cell.text.strip() for cell in row.cells]
+        return ' | '.join(cells)  # Join cells with ' | '
+
+    full_text = []
+
+    try:
+        # Load the DOCX file
+        doc = Document(filepath)
+
+        for element in doc.element.body:
+            # Handle paragraphs
+            if element.tag.endswith('p'):
+                paragraph = element.text.strip()
+                if paragraph:  # Only add non-empty paragraphs
+                    full_text.append(paragraph)
+
+            # Handle tables
+            elif element.tag.endswith('tbl'):
+                table = element
+                table_text = []
+                for row in table.rows:
+                    row_text = process_table_row(row)
+                    table_text.append(row_text)
+                if table_text:  # Only add non-empty tables
+                    full_text.append('\n'.join(table_text))
+                    full_text.append('-' * 40)  # Table separator
+
+        return '\n'.join(full_text)
+
+    except FileNotFoundError:
+        return f"Error: The file '{filepath}' was not found."
+    except Exception as e:
+        return f"An unexpected error occurred: {str(e)}"
 
 def get_text_from_pdf(filepath):
     """
     Extracts text from a PDF file while attempting to preserve table structures.
     Returns text with table content grouped by rows and columns.
     """
-    import PyPDF2
-    import re
-
     def process_table_line(line):
         """Helper function to identify and format potential table rows"""
         # Split by multiple spaces (common in PDF tables)
@@ -73,6 +114,19 @@ def get_text_from_pdf(filepath):
             full_text.append('\n=== Page Break ===\n')
 
         return '\n'.join(full_text)
+
+
+def yield_pdfs_paths(directory):
+    # Traverse through the directory
+    for root, dirs, files in os.walk(directory):
+        # Loop through the files in each directory
+        for file in files:
+            # Check if the file has a .pdf extension
+            if file.lower().endswith(".pdf") or file.lower().endswith(".pdf"):
+                # Yield the full path to the PDF file and normalize to Windows format
+                yield os.path.normpath(os.path.join(root, file)), file
+
+# print(get_text_from_pdf("04 - Data Transformer/Data/Hitachi/QT-22-Hitachi13_Rev1_EN_H4A.pdf"))
 
 # import tiktoken
 #

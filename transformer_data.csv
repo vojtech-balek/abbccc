@@ -1,0 +1,5 @@
+date,quantity,suppliers_currency,transformer_unit_price,dry_or_oil,rated_power_kVA,primary_winding,secondary_winding,no_load_loss,full_load_loss_75,full_load_loss_120,rated_volt_primary_side
+9.09.2021,2,EUR,34500,Dry,1600,Aluminium,Aluminium,3500,12000,,20000
+9.09.2021,1,EUR,36600,Dry,1400,Aluminium,Aluminium,3900,14000,,20000
+9.09.2021,1,EUR,51000,Dry,3000,Aluminium,Aluminium,6000,,22000,20000
+9.09.2021,1,EUR,23500,Dry,630,Aluminium,Aluminium,1900,,8000,20000
