@@ -102,7 +102,6 @@ def get_extract_prompt(transformer_number:int, text):
                         packing_costs: 0 if included, price otherwise,
                         transportation_extra_costs: 0 if included, price otherwise,
                         lead_time: weeks,
-                        
                         dry_or_oil: choose ("Dry", "Oil"),
                         application: choose ("Distribution", "Rectifier"),
                         standard: choose ("IEC", "IEEE", other standards),
