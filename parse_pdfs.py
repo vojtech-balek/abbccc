@@ -14,18 +14,17 @@ class TransformerInfo(BaseModel):
     #Project General Information
     date: Optional[str] = None
     opportunity_number: Optional[str] = None
-    procure_entity_id: Optional[str] = None
-    end_customer: Optional[str] = None
+    #procure_entity_id: Optional[str] = None
+    #end_customer: Optional[str] = None
     end_country: Optional[str] = None
     project_name: Optional[str] = None
-    industry: Optional[str] = None
+    #industry: Optional[str] = None
     supplier: Optional[str] = None
     supplier_offer_reference: Optional[str] = None
     abb_procure_rfq_num: Optional[str] = None
     offer_type: Optional[str] = None
     division: Optional[str] = None
     country_of_demand: Optional[str] = None
-    won: Optional[str] = None
     # Commercial part
     quantity: Optional[int] = None
     suppliers_currency: Optional[str] = None
@@ -91,9 +90,8 @@ class NumberTransformers(BaseModel):
 # filepath = '04 - Data Transformer/Examples/RDOSea3A.pdf'
 
 
-
 # Define prompts
-system = "You are an expert finder of key information from text."
+system = "You are an expert finder of key information from text. Mark low confidence finds by adding (?) in the field."
 
 def get_extract_prompt(transformer_number:int, text):
     user_extract = (f"Extract the requested information from the offer."
@@ -101,30 +99,22 @@ def get_extract_prompt(transformer_number:int, text):
                     f"number {transformer_number}. Make sure to follow the restrictions-convert to correct units."
                     f"Additional restrictions:"
                     f""" 
-                        date: date of the offer, 
-                        opportunity_number: number of the opportuniy (e.g. OPP-20-3918859),
-                        end_customer: name of the end customer, 
-                        end_country: country of installation of the device,
-                        project_name: name of the project, 
-                        industry: choose ("H2", "ALU", "CEM", "MIN", "OTHER"),
-                        supplier: name of the suplier company, 
-                        supplier_offer_reference: reference of the supplier offer,
+                        opportunity_number: (e.g. OPP-20-3918859),
+                        supplier: name of the supplier company, 
+                        supplier_offer_reference: (Code),
                         abb_procure_rfq_num: number of abb procure RQF if available,
                         offer_type: choose ("Firm", "Budgetary"),
                         division: choose division (e.g. "PAEN"),
-                        country_of_demand: country of demand,
-                        won: yes if won, no if not,
                         quantity: explains how many transformer units number {transformer_number} are being sold."
                         suppliers_currency: (EUR, CZK..),
-                        transformer_unit_price: price of single unit of specified transformer,
+                        transformer_unit_price: price of single unit of specified transformer (IMPORTANT),
                         discount: mention of discounts applied to the offer from the manufacturer,
                         additional_cost: Cost of additional components related to transformer (e.g. "1200 + 2000 + 3000"),
                         incoterm: abbreviation of the incoterm used in the offer (e.g. FCA, EXW), 
                         incoterm_place: geographical place of the incotermm,
-                        packing: any specification of the packaging,
-                        packing_costs: 0 if included, price otherwise,
-                        transportation_extra_costs: 0 if included, price otherwise,
-                        lead_time: weeks,
+                        packing: type of the packaging (Light, Unpacker, Seaworthy...),
+                        packing_costs: ("Inc" (included) or stated price),
+                        lead_time: (weeks),
                         dry_or_oil: choose ("Dry", "Oil"),
                         application: choose ("Distribution", "Rectifier"),
                         standard: choose ("IEC", "IEEE", other standards),
@@ -236,7 +226,7 @@ if __name__ == '__main__':
     counter = 0
 
     # Example usage
-    for file_path, filename in yield_pdfs_paths("04 - Data Transformer/Data"):
+    for file_path, filename in yield_pdfs_paths("04 - Data Transformer/Dnesni"):
         if filename.endswith(".pdf"):
             text = get_text_from_pdf(file_path)
         else:
@@ -260,5 +250,5 @@ if __name__ == '__main__':
     # Concatenate all DataFrames into one DataFrame
     df = pd.concat(df_list, ignore_index=True)
 
-    df.to_csv("transformer_data_examples.csv", index=False, encoding="utf-8")
-    print("Data saved to transformer_data_examples.csv")
+    df.to_csv("test_na_par_pdfs.csv", index=False, encoding="utf-8")
+    print("Data saved to test_na_par_pdfs.csv")
