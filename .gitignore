@@ -1,2 +1,7 @@
 credentials.json
 04 - Data Transformer
+.idea
+*.csv
+*.txt
+
+*.pyc
