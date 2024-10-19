@@ -1,0 +1,106 @@
+,Rated power in kVA,Transformer unit price in EUR,Outlier,Project name
+0,19080.0,708000.0,False,Best1 - USA - ABB - Project Hydrogen Mitshubishi US for Oil Transformers.pdf
+1,11000.0,235000.0,False,Quote Celduc1.00.pdf
+2,12000.0,267000.0,False,Celme_21-Celme1.pdf
+4,12000.0,267000.0,False,Celme_21-Celme1.pdf
+6,5000.0,56200.0,False,QT-20-Hitachi17_Rev-1.pdf
+7,6500.0,79500.0,False,QT-20-Hitachi1_Rev1.pdf
+8,6000.0,127000.0,False,QT-20-Hitachi2_Rev0.pdf
+10,12000.0,195000.0,False,QT-21-Hitachi11_Rev1.pdf
+11,12000.0,195000.0,False,QUOTATION Sonmez4.pdf
+12,2500.0,291000.0,True,QT-21-Hitachi12_Rev1_EN_H4A.pdf
+13,1000.0,78750.0,False,QT-21-Hitachi12_Rev1_EN_H4A.pdf
+14,2800.0,63600.0,False,QT-21-Hitachi15_Rev.0.pdf
+15,1500.0,33660.0,False,QT-22-Hitachi10_Rev0.pdf
+16,315.0,20490.0,False,QT-22-Hitachi10_Rev0.pdf
+17,1800.0,35300.0,False,QT-22-Hitachi10_Rev0.pdf
+18,2000.0,361500.0,True,QT-22-Hitachi13_Rev1_EN_H4A.pdf
+19,1000.0,23100.0,False,QT-22-Hitachi16_Rev6.pdf
+21,1250.0,28240.0,False,QT-22-Hitachi20_Rev1.pdf
+23,2500.0,29980.0,False,
+24,1000.0,29980.0,False,QT-22-Hitachi21_Rev0.pdf
+25,15000.0,197000.0,False,QT-22-Hitachi5_Rev0_EN_H4A.pdf
+26,8000.0,192000.0,False,
+27,5400.0,72000.0,False,RDOSea1A.pdf
+28,5400.0,78000.0,False,RDOSea1A.pdf
+29,11000.0,362000.0,False,RDOSea2C.pdf
+30,22000.0,715000.0,False,RDOSea2C.pdf
+31,15000.0,398000.0,False,RDOSea3A.pdf
+32,8000.0,150000.0,False,2022 08 03 SGB Ang SGB4 R00.pdf
+34,8000.0,150000.0,False,SGB4-Datasheet.pdf
+36,8000.0,150000.0,False,2022 08 03 SGB Ang SGB4 R00.pdf
+38,8000.0,150000.0,False,SGB4-Datasheet.pdf
+40,12000.0,620000.0,True,Burget Price SGB7.pdf
+56,1000.0,25900.0,False,SGB Ang SGB10 R03_signed.pdf
+57,1300.0,40000.0,False,SGB Ang SGB10 R03.pdf
+59,1300.0,40000.0,False,SGB Ang SGB10 R03_signed.pdf
+61,1000.0,25900.0,False,SGB Ang SGB10 R03_signed.pdf
+63,1300.0,40000.0,False,SGB Ang SGB10 R03.pdf
+65,1300.0,40000.0,False,SGB Ang SGB10 R03_signed.pdf
+67,1000.0,25900.0,False,SGB Ang SGB10 R03_signed.pdf
+68,2000.0,46700.0,False,SGB Off ABB RfQ-284351-0.pdf
+69,7000.0,111000.0,False,SGB Quote SGB3-00-ABB RFQ-237998-0_signedRHE.pdf
+73,12000.0,125000.0,False,SGB Quote SGB6-01-ABB RFQ-240466-0_signed.pdf
+74,11400.0,155000.0,False,SGB Quote SGB8 ABB 274133 R00.pdf
+75,6500.0,206000.0,False,SGB1 offer V2 RFQ-210204 Air liquide.pdf
+76,6000.0,99000.0,False,SGB2_ 26 special transformer 6 MVA 33 kV 04-09-2020.pdf
+77,6000.0,99000.0,False,SGB2_ABB.pdf
+79,1800.0,37250.0,False,SGB5_ABB.pdf
+81,1500.0,30710.0,False,SGB5_ABB.pdf
+82,250.0,11340.0,False,SGB5_ABB.pdf
+83,15000.0,580000.0,False,QUOTATION Sonmez1.pdf
+85,15000.0,5500.0,False,
+86,1600.0,34500.0,False,QUOTATION Sonmez2.pdf
+87,1400.0,36600.0,False,QUOTATION Sonmez2.pdf
+88,3000.0,51000.0,False,QUOTATION Sonmez2.pdf
+89,630.0,23500.0,False,QUOTATION Sonmez2.pdf
+90,12000.0,265000.0,False,QUOTATION Sonmez3.pdf
+91,12000.0,210000.0,False,QUOTATION Sonmez3.pdf
+92,12000.0,195000.0,False,QT-21-Hitachi11_Rev1.pdf
+93,12000.0,195000.0,False,QUOTATION Sonmez4.pdf
+94,12000.0,629000.0,True,QUOTATION Sonmez5.pdf
+95,12000.0,301000.0,False,QUOTATION Sonmez5.pdf
+96,6113.0,139000.0,False,QUOTATION Sonmez6.pdf
+97,2039.0,75000.0,False,QUOTATION Sonmez6.pdf
+98,5400.0,215000.0,False,
+99,10800.0,175000.0,False,QUOTATION Sonmez7.pdf
+100,5400.0,216000.0,False,QUOTATION Sonmez8.pdf
+101,1325.0,81000.0,False,QUOTATION Sonmez9.rev1.pdf
+102,1000.0,70000.0,False,QUOTATION Sonmez9.rev1.pdf
+103,15000.0,7300.0,True,
+104,15000.0,852000.0,True,QN-TMC11-Quotation_Wärtsilä - Vantaan H2 project - OPP-21-4995847.pdf
+105,15450.0,176800.0,False,"QN-TMC12_rev.1_Quotation_RFQ-230738-0_OPP-21-4660027, Hydrogenplant NN.pdf"
+106,1250.0,25400.0,False,QN-TMC13-rev.1_Quotation_RFQ-255592-0_H2 -Energiefabrik Lübesse for CONVERTOR.pdf
+107,1600.0,26000.0,False,
+108,630.0,15600.0,False,QN-TMC4-Quotation (002).pdf
+109,500.0,14000.0,False,QN-TMC4-Quotation (002).pdf
+110,2500.0,56400.0,False,QN-TMC6_kommerziell.pdf
+111,1600.0,54700.0,False,
+112,2800.0,51000.0,False,QN-TMC7-Quotation.pdf
+113,15000.0,252600.0,False,QN-TMC9-Quotation_RFQ-277276-0_OPP-22-5757363 Arcadia.pdf
+114,6500.0,74500.0,False,
+115,3250.0,74500.0,False,OVTrasfor2-1.pdf
+116,6500.0,74500.0,False,
+117,10000.0,128000.0,False,OVTrasfor3-2.pdf
+118,5000.0,70000.0,False,OVTrasfor9-2.pdf
+119,2000.0,70000.0,False,
+120,5000.0,70000.0,False,OVTrasfor9-2.pdf
+121,15000.0,148000.0,False,QTTrasfor10-4.pdf
+122,15000.0,149000.0,False,
+123,7500.0,149000.0,False,QTTrasfor10-4.pdf
+124,15000.0,172000.0,False,QTTrasfor4-1.pdf
+125,15000.0,120000.0,False,QTTrasfor5-2.pdf
+126,6113.0,57800.0,False,QTTrasfor7.pdf
+127,5000.0,132000.0,False,
+128,5400.0,660000.0,True,QTTrasfor8-2.pdf
+129,2000.0,46700.0,False,SGB Off ABB RfQ-284351-0.pdf
+130,6000.0,183333.0,False,
+131,8000.0,150000.0,False,2022 08 03 SGB Ang SGB4 R00.pdf
+133,8000.0,150000.0,False,SGB4-Datasheet.pdf
+135,8000.0,150000.0,False,2022 08 03 SGB Ang SGB4 R00.pdf
+137,8000.0,150000.0,False,SGB4-Datasheet.pdf
+139,8000.0,22000.0,True,SGB4-Datasheet.pdf
+140,1800.0,37250.0,False,SGB5_ABB.pdf
+142,1500.0,30710.0,False,SGB5_ABB.pdf
+143,250.0,11340.0,False,SGB5_ABB.pdf
+144,250.0,11340.0,False,SGB5_ABB.pdf
